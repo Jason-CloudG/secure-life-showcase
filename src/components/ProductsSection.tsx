@@ -1,5 +1,6 @@
 import { Heart, Umbrella, Building, Wallet, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const products = [
   {
@@ -8,6 +9,7 @@ const products = [
     description:
       "Affordable coverage for a specific period. Ideal for protecting your family during your working years.",
     features: ["Fixed premiums", "Coverage up to $5M", "10-30 year terms"],
+    href: "/products/term-life",
   },
   {
     icon: Umbrella,
@@ -15,6 +17,7 @@ const products = [
     description:
       "Lifetime protection with cash value accumulation. Build wealth while ensuring your family's security.",
     features: ["Lifetime coverage", "Cash value growth", "Fixed premiums"],
+    href: "/products/whole-life",
   },
   {
     icon: Building,
@@ -22,6 +25,7 @@ const products = [
     description:
       "Flexible coverage with adjustable premiums and death benefits. Adapt as your life changes.",
     features: ["Flexible premiums", "Adjustable coverage", "Investment options"],
+    href: "/products/universal-life",
   },
   {
     icon: Wallet,
@@ -29,6 +33,7 @@ const products = [
     description:
       "Affordable coverage to help your loved ones manage end-of-life expenses without financial burden.",
     features: ["Easy approval", "No medical exam", "Quick payout"],
+    href: "/products/final-expense",
   },
 ];
 
@@ -85,9 +90,12 @@ const ProductsSection = () => {
               <Button
                 variant="ghost"
                 className="w-full justify-between text-primary hover:text-secondary group/btn"
+                asChild
               >
-                Learn More
-                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                <Link to={product.href}>
+                  Learn More
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </Link>
               </Button>
             </div>
           ))}
