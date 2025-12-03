@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import GetQuote from "./pages/GetQuote";
+import About from "./pages/About";
 import TermLifeInsurance from "./pages/products/TermLifeInsurance";
 import WholeLifeInsurance from "./pages/products/WholeLifeInsurance";
 import UniversalLifeInsurance from "./pages/products/UniversalLifeInsurance";
@@ -20,6 +22,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/quote" element={<GetQuote />} />
+          <Route path="/about" element={<About />} />
           <Route path="/products/term-life" element={<TermLifeInsurance />} />
           <Route path="/products/whole-life" element={<WholeLifeInsurance />} />
           <Route path="/products/universal-life" element={<UniversalLifeInsurance />} />
