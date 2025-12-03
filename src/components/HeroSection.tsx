@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Users, Award } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-family.jpg";
 
 const HeroSection = () => {
@@ -34,12 +35,14 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="hero" size="xl">
-                Get Free Quote
-                <ArrowRight className="w-5 h-5" />
+              <Button variant="hero" size="xl" asChild>
+                <Link to="/quote">
+                  Get Free Quote
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
               </Button>
-              <Button variant="hero-outline" size="xl">
-                Learn More
+              <Button variant="hero-outline" size="xl" asChild>
+                <Link to="/about">Learn More</Link>
               </Button>
             </div>
 
